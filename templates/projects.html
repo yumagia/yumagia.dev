@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<hr class="title">
+<h1 class="title"><a href="{{ get_url(path='/') }}">YUMAGIA.DEV</a> : {{ section.title }}</h1>
+<hr class="title">
+
+<ul class="project">
+    <!-- If you are using pagination, section.pages will be empty.
+        You need to use the paginator object -->  
+    {% for page in section.pages %}
+    <div class="pcontainter">
+        <div class="pcontainter-1">
+            <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2> 
+            {% if page.extra.end_date %}
+                <h2>{{ page.extra.start_date }} - {{ page.extra.end_date }}</h2>
+            {% else %}
+                <h2>{{ page.extra.status }}</h2>
+            {% endif %}
+        </div>
+        <hr class="type1">
+        <div class="pcontainter-1">
+            <span class="pcontent"><p>{{ page.description }}</p></span>
+            <img class="iconp" src="{{ config.base_url }}/img/test.jpg" />
+        </div>
+    </div>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

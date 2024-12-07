@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr class="title">
+<h1 class="title"><a href="{{ get_url(path='/') }}">YUMAGIA.DEV</a> : <a href="{{ get_url(path='@/projects/_index.md') }}">PROJECTS</a> : {{ page.title }}</h1>
+<hr class="title">
+
+{{ page.content | safe }}
+
+{% endblock content %}

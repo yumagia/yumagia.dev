@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr class="title">
+<h1 class="title">YUMAGIA.DEV</h1>
+<hr class="title">
+
+<div class="bannervw">		
+	<img src="{{ config.base_url }}/img/test.jpg">
+	<img src="{{ config.base_url }}/img/bannerhopalong2.jpg">
+	<img src="{{ config.base_url }}/img/test.jpg">
+</div>
+
+
+<h2>ABOUT</h2> 
+<p>
+	<span>
+	Hello! I'm a computer graphics enjoyer who's currently studying Computer Science at the University of Minnesota. I'm currently interested in all things real-time rendering. 
+	I've been developing 3D engines in the Scratch language from the ground-up since before high school as a hobby of mine. Since then, I've made a few game engines in Scratch. 
+	One of which, being my in-the-works engine inspired by idTech's Quake. I am also slowly working on translating it to C++!
+	Outside of programming and game development, I really like painting, and I mostly paint on digial media these days. It's a lot of fun! 
+	Some of my artworks can be found scattered around this site.
+	</span>
+	<span class="line-break">
+	Here are a few of my personal principles and values. I want to:
+	<li>Contribute what I have to the world through my work. I want to make games which let people be happy for playing them.</li>
+	<li>Uplift my peers as I uplift myself, and work to bring us towards the best possible realities.</li>
+	<li>Expand my toolsets in knowledge. It's always a priority. I'm always open to learn more :)</li>
+	</span>
+</p>
+
+<h2>RESUME</h2>
+
+<h2><a href="{{ get_url(path='@/projects/_index.md') }}">PROJECTS</a></h2>
+<h2><a href="{{ get_url(path='@/blog/_index.md') }}">BLOG</a></h2>
+
+
+{% endblock content %}
+
