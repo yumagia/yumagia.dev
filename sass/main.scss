@@ -21,6 +21,45 @@ body
 	margin-bottom: 12em;
 }
 
+code.inline
+{
+	-webkit-user-select: all;
+	user-select: all;
+	display: inline-block;
+	padding: 5px;
+	border-radius: 10px;
+	font-family: "Consolas";
+	color: rgb(0, 0, 0);
+	border: 1px solid rgb(200, 200, 200);
+	background-color: rgb(240, 240, 240);
+	text-align: left;
+	overflow: auto;
+	vertical-align: bottom;
+}
+
+code
+{
+	-webkit-user-select: all;
+	user-select: all;
+	display: block;
+	white-space: pre;
+	padding: 5px;
+	border-radius: 10px;
+	font-family: "Consolas";
+	color: rgb(0, 0, 0);
+	border: 1px solid rgb(200, 200, 200);
+	background-color: rgb(240, 240, 240);
+	text-align: left;
+	overflow: auto;
+}
+  
+code:focus
+{
+	border: 2px dashed #31808c;
+	outline: none;
+	animation: select 100ms step-end forwards;
+}
+
 .title
 {
 	font-size: 24px;
@@ -108,9 +147,9 @@ div.pcontainter
 {
 	margin-bottom: 1em;
 	padding: 4px 32px;
-	background-color: white;
 	display: run-in;
-	overflow-x: auto;
+	overflow: hidden;
+	position: relative;
 	max-height: 300px;
 	height: 300px;
 	border: 3px solid rgb(200, 200, 200);
@@ -129,10 +168,24 @@ span.pcontent
 	padding-left: 16px;
 }
 
+img.background
+{
+	position: absolute;
+	top: 0;
+    left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 20%;
+	background-color: white;
+	z-index: -1;
+}
+
 img.iconp
 {
-	min-width: 360px;
-	max-height: 180px;
+	min-width: 400px;
+	max-height: 200px;
+	object-fit: cover;
 	border: 1px dashed rgb(0, 0, 0);
 }
 
@@ -155,6 +208,21 @@ div.figure img
 	padding-bottom: 1em;
 	max-width: 512px;
 	max-height: 512px;
+}
+
+div.figure2
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div.figure2 img
+{
+	margin: 0 5px;
+	padding-bottom: 1em;
+	max-width: 1024px;
+	max-height: 1024px;
 }
 
 .mathfig

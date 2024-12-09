@@ -12,6 +12,11 @@
         You need to use the paginator object -->  
     {% for page in section.pages %}
     <div class="pcontainter">
+        {% if page.extra.icon %}
+            <img class="background" src="{{ page.extra.icon }}" />
+        {% else %}
+            <img class="background" src="{{ config.base_url }}/img/test.jpg" />
+        {% endif %}
         <div class="pcontainter-1">
             <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2> 
             {% if page.extra.end_date %}
@@ -23,7 +28,11 @@
         <hr class="type1">
         <div class="pcontainter-1">
             <span class="pcontent"><p>{{ page.description }}</p></span>
-            <img class="iconp" src="{{ config.base_url }}/img/test.jpg" />
+            {% if page.extra.icon %}
+                <img class="iconp" src="{{ page.extra.icon }}" />
+            {% else %}
+                <img class="iconp" src="{{ config.base_url }}/img/test.jpg" />
+            {% endif %}
         </div>
     </div>
     {% endfor %}

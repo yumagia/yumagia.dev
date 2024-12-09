@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<hr class="title">
+<h1 class="title"><a href="{{ get_url(path='/') }}">YUMAGIA.DEV</a> : {{ section.title }}</h1>
+<hr class="title">
+
+<ul class="project">
+    <!-- If you are using pagination, section.pages will be empty.
+        You need to use the paginator object -->  
+    {% for page in section.pages %}
+    <div class="pcontainter">
+        <div class="pcontainter-1">
+            <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2> 
+            <h2>{{ page.taxonomies.tags }}</h2>
+        </div>
+        <hr class="type1">
+        <div class="pcontainter-1">
+            <span class="pcontent"><p>{{ page.description }}</p></span>
+        </div>
+    </div>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

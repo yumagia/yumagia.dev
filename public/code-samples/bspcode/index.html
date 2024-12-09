@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;yumagia.dev/main.css">
+  <title>yumagia</title>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      
+<hr class="title">
+<h1 class="title"><a href="https://yumagia.dev">YUMAGIA.DEV</a> : <a href="https://yumagia.dev/code-samples/">CODE SAMPLES</a></h1>
+<hr class="title">
+
+<h1 class="title">
+  BSP Code
+</h1>
+<p class="subtitle"><strong>A BSP tree generation function which I wrote for the Gamma Engine project, with pseudocode included.</strong></p>
+
+<p>Here is the BSP tree generation code for Gamma Engine. It creates a solid-leaf BSP tree, given a set of polygons from a lazy mesh. The pseudocode is provided below the Scratch function.</p>
+<div class="figure2">
+    <img src ="bspgeneratetreescratch.png"/>
+</div>
+<code>
+function bsp_gen(lower, upper, side, parent)
+    IF upper.next = lower THEN
+        addnode(null, null, null, side, parent) //adds a solid leaf
+        return
+    greedyselectpivot(lower, upper)
+    genboundinggeom(lower, upper)
+    IF pivot = null THEN
+        stabilizesort(lower, upper)
+        IF not right? THEN
+            addnode(null, null, null, side, parent)
+            return
+        add set to air leaf, inherit parent
+        addnode(lower, upper, null, side, parent) //add air leaf
+    ELSE
+        partition(lower, upper)
+        IF parent = null THEN
+            addnode(partitionhead, pivot, &pivot, null, parent) //adds an internal node 
+        ELSE
+            addnode(partitionhead, pivot, &pivot, side, parent)
+        bsp_gen(lower, pivot, left, *newnode)
+        bsp_gen(lower.next, upper, right, *newnode)
+</code>
+<p>Here's the function header for <code class="inline">addnode</code>:</p>
+<p><code>function addnode(lower, upper, splittingplane, side, parent)</code></p>
+<!-- The function, <code class="inline">partition</code> -->
+
+
+    </div>
+  </section>
+</body>
+
+</html>
+
