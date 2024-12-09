@@ -5,6 +5,7 @@ description = "A BSP tree generation function which I wrote for the Gamma Engine
 tags=["scratchcode", "pseudocode"]
 +++
 
+(12/9/2024) This is still in progress! I just wrote this page so there may be errors until the afternoon!
 
 Here is the BSP tree generation code for Gamma Engine. It creates a solid-leaf BSP tree, given a set of polygons from a lazy mesh. The pseudocode is provided below the Scratch function. 
 
