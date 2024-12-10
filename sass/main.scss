@@ -21,43 +21,95 @@ body
 	margin-bottom: 12em;
 }
 
-code.inline
+// code.inline
+// {
+// 	-webkit-user-select: all;
+// 	user-select: all;
+// 	display: inline-block;
+// 	padding: 5px;
+// 	border-radius: 10px;
+// 	font-family: "Consolas";
+// 	color: rgb(0, 0, 0);
+// 	border: 1px solid rgb(200, 200, 200);
+// 	background-color: rgb(240, 240, 240);
+// 	text-align: left;
+// 	overflow: auto;
+// 	vertical-align: bottom;
+// }
+
+// code
+// {
+// 	display: inline-block;
+// 	padding: 5px;
+// 	border-radius: 10px;
+// 	font-family: "Consolas";
+// 	color: rgb(0, 0, 0);
+// 	border: 1px solid rgb(200, 200, 200);
+// 	background-color: rgb(240, 240, 240);
+// 	text-align: left;
+// 	overflow: auto;
+// 	width: 50vw;
+// }
+
+// code span
+// {
+// 	white-space: pre;
+// 	display: block;
+// }
+  
+// code:focus
+// {
+// 	border: 2px dashed #31808c;
+// 	outline: none;
+// 	animation: select 100ms step-end forwards;
+// }
+
+// code.inline
+// {
+// 	display: inline-block;
+// 	padding: 5px;
+// 	border-radius: 10px;
+// 	font-family: "Consolas";
+// 	color: rgb(0, 0, 0);
+// 	border: 1px solid rgb(200, 200, 200);
+// 	background-color: rgb(240, 240, 240);
+// 	text-align: left;
+// 	height: auto;
+// 	width: auto;
+// }
+
+pre 
 {
-	-webkit-user-select: all;
-	user-select: all;
-	display: inline-block;
-	padding: 5px;
-	border-radius: 10px;
-	font-family: "Consolas";
-	color: rgb(0, 0, 0);
-	border: 1px solid rgb(200, 200, 200);
-	background-color: rgb(240, 240, 240);
-	text-align: left;
+	padding: 1rem;
 	overflow: auto;
-	vertical-align: bottom;
+}
+	/* The line numbers already provide some kind of left/right padding */
+pre[data-linenos] 
+{
+	padding: 1rem 0;
+}
+pre table td 
+{
+	padding: 0;
+}
+	/* The line number cells */
+pre table td:nth-of-type(1) 
+{
+	text-align: center;
+	user-select: none;
+}
+pre mark 
+{
+	/* If you want your highlights to take the full width */
+	display: block;
+	/* The default background colour of a mark is bright yellow */
+	background-color: rgba(254, 252, 232, 0.9);
 }
 
-code
+pre table 
 {
-	-webkit-user-select: all;
-	user-select: all;
-	display: block;
-	white-space: pre;
-	padding: 5px;
-	border-radius: 10px;
-	font-family: "Consolas";
-	color: rgb(0, 0, 0);
-	border: 1px solid rgb(200, 200, 200);
-	background-color: rgb(240, 240, 240);
-	text-align: left;
-	overflow: auto;
-}
-  
-code:focus
-{
-	border: 2px dashed #31808c;
-	outline: none;
-	animation: select 100ms step-end forwards;
+	width: 100%;
+	border-collapse: collapse;
 }
 
 .title

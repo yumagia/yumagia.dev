@@ -14,11 +14,12 @@
     <div class="pcontainter">
         <div class="pcontainter-1">
             <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2> 
-            <h2>{{ page.taxonomies.tags }}</h2>
+            <h2>{{ page.date }}</h2>
         </div>
         <hr class="type1">
         <div class="pcontainter-1">
             <span class="pcontent"><p>{{ page.description }}</p></span>
+            <h2>{{ page.taxonomies.tags }}</h2>
         </div>
     </div>
     {% endfor %}
