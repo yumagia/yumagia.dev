@@ -15,6 +15,7 @@
     </url>
     <url>
         <loc>https://yumagia.dev/code-samples/bspcode/</loc>
+        <lastmod>2024-12-09</lastmod>
     </url>
     <url>
         <loc>https://yumagia.dev/projects/</loc>
@@ -31,9 +32,12 @@
         <loc>https://yumagia.dev/tags/</loc>
     </url>
     <url>
+        <loc>https://yumagia.dev/tags/c/</loc>
+    </url>
+    <url>
         <loc>https://yumagia.dev/tags/pseudocode/</loc>
     </url>
     <url>
-        <loc>https://yumagia.dev/tags/scratchcode/</loc>
+        <loc>https://yumagia.dev/tags/scratch/</loc>
     </url>
 </urlset>
