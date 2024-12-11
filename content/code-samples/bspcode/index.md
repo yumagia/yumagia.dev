@@ -70,7 +70,7 @@ typedef struct node_s {
     //leaves and internal nodes
     int                 planenum;           // -1 = leaf node
     struct node_s       *parent;
-    vec3_t              minb, maxb;<br>
+    vec3_t              minb, maxb;
     //nodes only
     ptnplane_t          *ptnplane;
     struct node_s       *children[2];
@@ -87,7 +87,7 @@ typedef struct node_s {
 ```c,linenos
 node_t *bspgen(node_t *node, face_t *faces) {
     node_t              *newnode;
-    ptnplane_t          *pivot;<br>
+    ptnplane_t          *pivot;
 
     pivot = greedyselect(faces);
     if (!pivot) {
@@ -101,18 +101,22 @@ node_t *bspgen(node_t *node, face_t *faces) {
     node->ptnplane = pivot;
     node->planenum = pivot->planenum & ~1;  // From Quake II. It's more cumbersome in Scratch
     
-    newnode = AllocNode();
+    newnode = allocnode();
     newnode->parent = node;
     node->children[1] = newnode;
-    newnode = AllocNode();
+    newnode = allocnode();
     newnode->parent = node;
     node->children[2] = newnode;
 
-    SplitFaces(node->planenum);
+    splitfaces(node->planenum);
 }
 ```
 
 Much of the code is quite akin to that of the BSP tool in the idTech 2 lineage. 
+
+<code>greedyselect</code> and <code>splitfaces</code> are sophisticated functions, both of which make use of code to classify polygons against the plane that splits them. I originally coded <code>greedyselect</code> as a single heuristic which selects the face which causes the least amount of splits in a node. However, this "pivot selection" does not need to be limited to a single heuristic. It can use a more complex combination of heuristics.
+
+(to be continued)
 
 <!-- ptnplane_s *greedyselect() {
     int                 val, bestval;
