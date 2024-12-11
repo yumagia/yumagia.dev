@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll('.webcomic-slider img');
+    const images = document.querySelectorAll('.slider img');
     let currentIndex = 0;
 
     const showImage = (index) => {
