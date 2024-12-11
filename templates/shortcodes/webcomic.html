@@ -5,7 +5,7 @@
     <div class="webcomic-slider">
         {% for asset in page.assets %}
             {%- if asset is matching("[.](jpg|png|JPG|PNG)$") -%}
-                    <img src="{{ asset }}" alt="Comic Image">
+                    <img src="{{ asset }}">
             {%- endif %}
         {% endfor %}
     </div>

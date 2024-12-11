@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll('.webcomic-slider img');
     let currentIndex = 0;

@@ -10,8 +10,4 @@ icon = "/projects/2024-writingclasscomic/IMG_3427.PNG"
 
 {{ webcomic() }}
 
-
-<script src="{{ webcomic.js }}"></script>
-
-
 {{ gallery() }}
