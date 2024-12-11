@@ -327,7 +327,7 @@ div.mathfig hr
     display: block;
 }
 
-.prev, .next {
+button.prev, button.next {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
@@ -343,11 +343,11 @@ div.mathfig hr
 	user-select: none;
 }
 
-.next {
+button.next {
 	right: 0;
 	border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
+button.prev:hover, button.next:hover {
 	background-color: rgba(0,0,0,0.8);
 }
