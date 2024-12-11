@@ -1,0 +1,20 @@
+
+<!-- RELIES ON SLIDESHOW CSS -->
+
+<div class="webcomic-slideshow">
+    <div class="webcomic-slider">
+        {% for asset in page.assets %}
+            {%- if asset is matching("[.](jpg|png|JPG|PNG)$") -%}
+                    <img src="{{ asset }}" alt="Comic Image">
+            {%- endif %}
+        {% endfor %}
+    </div>
+    <button class="prev">Prev</button>
+    <button class="next">Next</button>
+</div>
+
+{% block scripts %}
+
+<script src="{{ config.base_url }}/js/webcomic.js"></script>
+
+{% endblock %}
