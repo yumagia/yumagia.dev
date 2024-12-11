@@ -1,8 +1,8 @@
 
 <!-- RELIES ON SLIDESHOW CSS -->
 
-<div class="webcomic-slideshow">
-    <div class="webcomic-slider">
+<div class="slideshow">
+    <div class="slider">
         {% for asset in page.assets %}
             {%- if asset is matching("[.](jpg|png|JPG|PNG)$") -%}
                     <img src="{{ asset }}" alt="Comic Image">

@@ -304,7 +304,7 @@ div.mathfig hr
 	border-bottom: 0.1em solid;
 }
 
-div.webcomic-slideshow
+div.slideshow
 {
 	width: auto;
 	height: auto;
@@ -313,17 +313,17 @@ div.webcomic-slideshow
 	margin: 0 auto;
 }
 
-div.webcomic-slider
+div.slider
 {
 	display: flex;
 }
 
-div.webcomic-slider img {
+div.slider img {
 	width: 100%;
 	display: none;
 }
 
-div.webcomic-slider img:first-child {
+div.slider img:first-child {
     display: block;
 }
 
