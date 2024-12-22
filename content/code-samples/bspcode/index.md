@@ -55,7 +55,7 @@ typedef struct plane_s
 typedef struct ptnplane_s {
     int                 planenum;
     int                 tested;	
-    struct ptnplane_s   
+    struct ptnplane_s   *original;
 } ptnplane_t;
 
 typedef struct face_s {
@@ -99,16 +99,21 @@ node_t *bspgen(node_t *node, face_t *faces) {
     }
 
     node->ptnplane = pivot;
-    node->planenum = pivot->planenum & ~1;  // From Quake II. It's more cumbersome in Scratch
+    node->planenum = pivot->planenum & ~1;  // From Quake II. It's a bit less trivial in Scratch
     
     newnode = allocnode();
     newnode->parent = node;
-    node->children[1] = newnode;
+    node->children[0] = newnode;
     newnode = allocnode();
     newnode->parent = node;
-    node->children[2] = newnode;
+    node->children[1] = newnode;
 
     splitfaces(node->planenum);
+
+    node->children[0] = bspgen(node->children[0], children[0]);
+    node->children[1] = bspgen(node->children[1], children[1]);
+
+    return node;
 }
 ```
 
@@ -116,9 +121,11 @@ Much of the code is quite akin to that of the BSP tool in the idTech 2 lineage.
 
 <code>greedyselect</code> and <code>splitfaces</code> are sophisticated functions, both of which make use of code to classify polygons against the plane that splits them. I originally coded <code>greedyselect</code> as a single heuristic which selects the face which causes the least amount of splits in a node. However, this "pivot selection" does not need to be limited to a single heuristic. It can use a more complex combination of heuristics.
 
-(to be continued)
+The idTech 2 BSP generation makes use of free functions to free polygonal windings on "brushes". I believe it was because it was ideal for the developers to always provide an option to free redundant memory, and built their structures in a way to support that. There is a line, of which I commented on: 
 
-<!-- ptnplane_s *greedyselect() {
-    int                 val, bestval;
-    ptnplane_t          *current, *pivot;
-} -->
+```c
+    node->planenum = pivot->planenum & ~1;  // From Quake II. It's a bit less trivial in Scratch
+```
+In Quake, it's used along with their functions to free brush geometry in order to implicity remove bad geometry which could otherwise produce faulty trees(specifically faces which protrude into otherwise solid regions). They built all of the geometry from basic convex polytopes called "brushes", they use CSG to add and subtract these brushes from one anther. Seeing the way they built the tree generation code, I imagine it uses their CSG methods. I didn't do this in my own code because, at the time, I was unaware of how quake went about BSP. Instead, my program relied on an already CSG'ed lazy mesh, and assumed an absence of bad geometry such as leaks or t-junctions, then built the tree on this assumption. That way, the inclusion of this operator and freeing functions is not actually necessary. However, I included the line with the operator because I found the functionality of it very worth mentioning.
+
+I'm not entirely sure if I'd want to end up just using Quake's brush BSP as opposed to what I have right now, but the switch is quite possible it seems. 

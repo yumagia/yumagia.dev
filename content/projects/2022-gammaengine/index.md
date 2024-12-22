@@ -1,7 +1,7 @@
 +++
 title = "GAMMA ENGINE" 
 description = "Inspired by the id Tech 2 (Quake) engine, built in the Scratch language from the ground-up."
-date = 2022-10-31
+date = 2024-12-22
 [extra]
 start_date = "31 OCT 2022"
 status = "CURRENT"

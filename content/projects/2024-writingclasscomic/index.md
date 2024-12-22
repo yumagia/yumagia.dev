@@ -4,7 +4,8 @@ description = "A group research project for my university writing class. I illus
 date = 2024-12-10
 [extra]
 start_date = "10 DEC 2024"
-status = "CURRENT"
+end_date = "11 DEC 2024"
+status = "COMPLETE"
 icon = "/projects/2024-writingclasscomic/IMG_3427.PNG"
 +++
 
