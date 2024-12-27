@@ -37,7 +37,7 @@ function bsp_gen(lower, upper, side, parent)
             add_node(partitionhead, pivot, &pivot, side, parent)
         bsp_gen(lower, pivot, left, *newnode)
         bsp_gen(lower.next, upper, right, *newnode)
-        
+
 ```
 
 ... And I wrote the C translation, starting with all of the typedefs specific to the program:
@@ -64,14 +64,14 @@ typedef struct face_s {
 } face_t;
 
 typedef struct node_s {
-    //leaves and internal nodes
+    // leaves and internal nodes
     int                 planenum;           // -1 = leaf node
     struct node_s       *parent;
     vec3_t              minb, maxb;
-    //nodes only
+    // nodes only
     ptnplane_t          *ptnplane;
     struct node_s       *children[2];
-    //leaves only
+    // leaves only
     face_t              *facelist;
 } node_t;
 
@@ -89,7 +89,7 @@ node_t *bspgen(node_t *node, face_t *faces) {
 
     pivot = greedyselect(faces);
     if (!pivot) {
-        //We add a leaf
+        // We add a leaf
         node->side = NULL;
         node->planenum = -1;
         node->facelist = faces;
