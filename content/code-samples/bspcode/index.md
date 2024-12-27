@@ -6,10 +6,6 @@ date = 2024-12-09
 tags=["scratch", "c", "pseudocode"]
 +++
 
-(9 Dec 2024) This is still in progress! I just wrote this page so there may be errors until the afternoon!
-
-(10 Dec 2024) Added C code. Might have errors that I haven't fixed yet...
-
 Here is the BSP tree generation code for Gamma Engine. It creates a solid-leaf BSP tree, given a set of polygons from a lazy mesh. I originally wrote this in Scratch, but wanted to make a more understandable translation in pseudocode. After writing a quick pseudocode, and realizing it would actually be useful(and more fun!) to outright write it in C, I decided to just simply make the entire function along with its structure defs in C language. I decided to keep the pseudocode anyways since it was an important step I used to translate the Scratch code into C. The C/pseudocode is provided below the scratch blocks.
 
 
@@ -41,6 +37,7 @@ function bsp_gen(lower, upper, side, parent)
             add_node(partitionhead, pivot, &pivot, side, parent)
         bsp_gen(lower, pivot, left, *newnode)
         bsp_gen(lower.next, upper, right, *newnode)
+        
 ```
 
 ... And I wrote the C translation, starting with all of the typedefs specific to the program:
@@ -77,6 +74,7 @@ typedef struct node_s {
     //leaves only
     face_t              *facelist;
 } node_t;
+
 ```
 
 (I did not include the any of the more general typedefs such as <code>vec3_t</code> and <code>winding_t</code>, but you would need them in order to describe the geometric primitives)
@@ -115,6 +113,7 @@ node_t *bspgen(node_t *node, face_t *faces) {
 
     return node;
 }
+
 ```
 
 Much of the code is quite akin to that of the BSP tool in the idTech 2 lineage. 
