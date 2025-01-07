@@ -15,8 +15,8 @@ body
 	font-size: larger;
 
 	text-align: left;
-	margin-left: 12em;
-	margin-right: 12em;
+	margin-left: 18em;
+	margin-right: 18em;
 	margin-top: 2em;
 	margin-bottom: 12em;
 }
@@ -114,7 +114,7 @@ pre table
 
 .title
 {
-	font-size: 24px;
+	font-size: 32px;
 	font-weight: bold;
 	color: rgb(100, 70, 255);
 	text-decoration: none;
@@ -122,7 +122,7 @@ pre table
 
 h2
 {
-	font-size: 20px;
+	font-size: 24px;
 }
 
 hr.title
@@ -143,6 +143,16 @@ div.gallery
 	margin: 1em;
 	
 	border: 3px solid rgb(255, 0, 170);
+}
+
+div.textbox
+{
+	display: block;
+
+	padding: 0.5em;
+	margin: 1em;
+	
+	border: 3px solid rgb(100, 100, 100);
 }
 
 div.gallery img
@@ -167,23 +177,18 @@ div.gallery img.banner
 
 div.bannervw
 {
-	display: inline-flex;
-	padding: 0.5em;
-	margin: 1em;
-
-	width: auto;
-	height: auto;
-
-	border: 3px solid rgb(255, 0, 170);
-}
-
-div.bannervw img
-{	
-	height: 12vw;
-	width: auto;
-	
+	display: run-in;
+	overflow: hidden;
 	position: relative;
-	display: flex;	
+	max-height: 200px;
+	height: 200px;
+	border: 3px solid rgb(200, 200, 200);
+	background-image: url("/img/bannerhopalong2.jpg");
+	background-color: rgb(20, 0, 70);
+	background-repeat: repeat-y;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: 100%;
 }
 
 ul.project

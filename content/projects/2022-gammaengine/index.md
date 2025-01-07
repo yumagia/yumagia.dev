@@ -8,6 +8,23 @@ status = "CURRENT"
 icon = "/projects/2022-gammaengine/2024-10-05.png"
 +++
 
+<h2>GAMMA: THE ENGINE OF LIGHT</h2>
+<hr class="type1">
+
+<div class="textbox">
+    <b>Inspired by the id Tech 2 (Quake) engine, which I programmed entirely from the ground-up. I wrote the following tools and engine pipeline features for it:</b>
+    <li>A tool which converts lazy meshes of .OBJ format into solid-leaf BSP trees</li>
+    <li>Another tool which bakes map lighting by pathtracing on the solid-leaf trees</li>
+    <li>Traversal, search, and insertion functions</li>
+    <li>A player movement and collision engine</li>
+    <li>Various trace and collision functions</li>
+    <li>Quaternion, as well as matrix-based vector transformation libraries</li>
+    <li>A 3D dynamic sound engine</li>
+    <li>dynamic solid models</li>
+    <li>A particle engine</li>
+    <li>And a real-time lighting engine</li>
+</div>
+
 I've been working on this one for a while now. It's a 3D game engine inspired by the id Tech 2 (Quake) engine. I built it in the year 2022. Like all my engines from around then, it was built in the Scratch language from the ground-up. It includes a tool which converts lazy meshes in .OBJ format into solid-leaf BSP trees, and another, which subsequently bakes map lighting by pathtracing on the generated BSP trees. Core functions of the engine include various trace functions against the BSP tree, as well as traversal, search, and insertion. It allows for features such as Quake-style player movement, projectiles that bounce, and a mesh of an enemy which occludes properly against the game map. These features are built in their own respective engines: The movement engine, entity updates engine, and the rendering engine.
 
 It uses a 3D dynamic sound engine to produce directional audio. Transformations are either done using some simple matrix operations, or through a handful of quaternion functions, and I get to choose between the two when I need to code a transformation. Currently, triangles are filled using a "fast triangle fill", which uses Scratch's pen tool to fill a triangle in as little strokes and calculation as possible. The sound engine, quaternion functions, and triangle filler were written previous to the development of this project, and for previous projects.
