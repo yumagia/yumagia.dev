@@ -17,8 +17,8 @@ body
 	text-align: left;
 	margin-left: 18em;
 	margin-right: 18em;
-	margin-top: 2em;
-	margin-bottom: 12em;
+	margin-top: 3em;
+	margin-bottom: 6em;
 }
 
 // code.inline
@@ -120,6 +120,13 @@ pre table
 	text-decoration: none;
 }
 
+.article-title
+{
+	font-size: 54px;
+	font-weight: bold;
+	text-align: center;
+}
+
 h2
 {
 	font-size: 24px;
@@ -177,13 +184,13 @@ div.gallery img.banner
 
 div.bannervw
 {
+	margin-bottom: 12px;
 	display: run-in;
 	overflow: hidden;
 	position: relative;
 	max-height: 200px;
 	height: 200px;
 	border: 3px solid rgb(200, 200, 200);
-	background-image: url("/img/bannerhopalong2.jpg");
 	background-color: rgb(20, 0, 70);
 	background-repeat: repeat-y;
 	background-attachment: fixed;
