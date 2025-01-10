@@ -289,6 +289,22 @@ div.figure2 img
 	max-height: 1024px;
 }
 
+div.figure3
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div.figure3 img
+{
+	margin: 0 5px;
+	padding-bottom: 1em;
+	width: 720px;
+	height: 480px;
+	object-fit: cover;
+}
+
 .mathfig
 {
 	font-family: "Computer Sans";
