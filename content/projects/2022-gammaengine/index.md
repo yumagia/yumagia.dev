@@ -9,7 +9,7 @@ icon = "/projects/2022-gammaengine/2024-10-05.png"
 +++
 
 <div class="bannervw" style="background-image: url('2024-10-05.png');"></div>
-<h1 class="article-title">GAMMA: THE ENGINE OF LIGHT</h1>
+<h1 class="article-title">GAMMA ENGINE</h1>
 
 <hr class="type1">
 <div class="textbox">
