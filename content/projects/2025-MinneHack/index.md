@@ -9,11 +9,11 @@ status = "CURRENT"
 
 A silly little world for silly ppl. You may want to download the html below if connecting to a server that does not use http/https protocol.
 
-<iframe src="world-v9.html" width="1080" height="720">
+<iframe src="world-v10.html" width="1080" height="720">
 </iframe>
 
 <h2>
-<a href="world-v9.html" download>
+<a href="world-v10.html" download>
 Download Link
 </a>
 </h2>
