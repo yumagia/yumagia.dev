@@ -1,6 +1,6 @@
 +++
-title = "MinneHack Project" 
-description = "Project for 2025 MinneHack"
+title = "Scrungic Multiplayer Game" 
+description = "A silly 3D multiplayer game which started from the 2025 MinneHack"
 date = 2025-02-09
 [extra]
 start_date = "09 Feb 2025"
