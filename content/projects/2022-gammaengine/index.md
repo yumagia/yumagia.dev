@@ -1,10 +1,11 @@
 +++
-title = "GAMMA ENGINE" 
+title = "GAMMA ENGINE (SCRATCH)" 
 description = "Inspired by the id Tech 2 (Quake) engine, built in the Scratch language from the ground-up."
 date = 2024-12-22
 [extra]
 start_date = "31 OCT 2022"
-status = "CURRENT"
+end_date = "01 JAN 2025"
+status = "COMPLETE"
 icon = "/projects/2022-gammaengine/2024-10-05.png"
 +++
 
@@ -27,9 +28,9 @@ icon = "/projects/2022-gammaengine/2024-10-05.png"
 </div>
 
 <div class="captionedfigure">
-        <div class="figure3">
-            <img src ="2025-01-10 144101.png"/>
-        </div>
+    <div class="figure3">
+        <img src ="2025-01-10 144101.png"/>
+    </div>
     <span>
         <b>A map I made for the engine called "blockout". Shadows can be preprocessed and rendered as overlaid polygons.</b>
     </span>
@@ -39,18 +40,38 @@ I've been working on this one for a while now. It's a 3D game engine inspired by
 
 It uses a 3D dynamic sound engine I wrote for a previous project to produce directional audio. Transformations are either done using some simple matrix operations, or through a handful of quaternion functions, and I get to choose between the two when I need to code a transformation. Currently, triangles are filled using a "fast triangle fill", which uses Scratch's pen tool to fill a triangle in as little strokes and calculation as possible. The sound engine, quaternion functions, and triangle filler were written previous to the development of this project, and for previous projects.
 
-Current tasks include: Addressing collision issues involving solid models in movement, replacing baked pathtracing with a radiosity algorithm.
-
-Future tasks may include: Finishing the potentially visible set(PVS) generation algorithm and adding its associated functions, porting the code to C/C++, adding textures.
-
 
 <span class="line-break"></span>
 
 <div class="bannervw" style="background-image: url('etherealplane.png');"></div>
 <h1 class="article-title">ALPHA, BETA, AND GAMMA</h1>
 
-<b>(To be continued...)</b>
+Gamma Engine started as a vision to create a 3D engine suitable for creating fun first person shooter type games on Scratch. It had to have rich functionality like never seen before. Within a few months of on-and-off programming, I had something working. It had a wireframe neon guy who could blast bullets in first person. I also wrote a sound module which allowed for sounds to play directionally for the player. The sound would fall-off at a distance. This was what I now call "Alpha Engine".
+
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="Screenshot 2023-12-31 132923.png"/>
+        <img src ="Screenshot 2025-02-28 181424.png"/>
+        <img src ="Screenshot 2025-02-28 181957.png"/>
+    </div>
+    <span>
+        <b>During winter break of 2020, my friends and I tested and played the engine in its current state.</b>
+    </span>
+</div>
+
+
+Although it was quite a personal success, it was hard to use and ran extremely slow. I kept updating and building this engine until 2022. By then, it reached its own limits. As per my learning process, I wanted to conquer one of the three at a time: Functionality, user-friendliness, and optimization. Immediately after stopping development on the project, I wanted to make a more user-friendly engine... and I made Beta Engine.
+
+It was the COVID-19 pandemic. I would frequently scrolling and conversing in online circles, both on Scratch and not not on Scratch, with other users who coded technical Scratch-based programs. Users I knew of would occasionally bring up this algorithm, porported to have to ability to eliminate all rendering artifacts otherwise encountered by the common-use "painter's algo": Binary Space Partitioning.
+
+I knew nothing about it, but after thinking a bit, I was able to reverse-engineer an algorithm from conceptual-level description. 
 
 <div class="bannervw" style="background-image: url('2024-09-09.png');"></div>
+<h1 class="article-title">GAMMA-C</h1>
+
+
+Current tasks include: Addressing collision issues involving solid models in movement, replacing baked pathtracing with a radiosity algorithm.
+
+Future tasks may include: Finishing the potentially visible set(PVS) generation algorithm and adding its associated functions, rewriting the engine and utilities in C/C++, adding textures.
 
 {{ gallery() }}
