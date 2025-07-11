@@ -62,13 +62,52 @@ Gamma Engine started as a vision to create a 3D engine suitable for creating fun
 
 Although it was quite a personal success, it was hard to use and ran extremely slow. I kept updating and building this engine until 2022. By then, it reached its own limits. As per my learning process, I wanted to conquer one of the three at a time: Functionality, user-friendliness, and optimization. Immediately after stopping development on the project, I wanted to make a more user-friendly engine... and I made Beta Engine.
 
-It was the COVID-19 pandemic. I would frequently scrolling and conversing in online circles, both on Scratch and not not on Scratch, with other users who coded technical Scratch-based programs. Users I knew of would occasionally bring up this algorithm, porported to have to ability to eliminate all rendering artifacts otherwise encountered by the common-use "painter's algo": Binary Space Partitioning.
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="Screenshot 2025-07-07 100631.png"/>
+    </div>
+    <span>
+        <b>One of the many experiments I did with BETA.</b>
+    </span>
+</div>
 
-I knew nothing about it, but after thinking a bit, I was able to reverse-engineer an algorithm from conceptual-level description. 
+It was the COVID-19 pandemic. I would frequently scrolling and conversing in online circles, both on Scratch and not not on Scratch, with other users who coded technical Scratch-based programs. Users I knew of would occasionally bring up this algorithm, purported to have to ability to eliminate all rendering artifacts otherwise encountered by the common-use "painter's algo": Binary Space Partitioning.
+
+I knew nothing about it, but after thinking a bit, I was able to reverse-engineer an algorithm from conceptual-level description. The new algorithm would take an array of polygons in 3D camera space (stored as pointers to polygon objects), and used Lomuto's Partitioning Scheme to sort them. The partition pivots were defined as the planes in which a polygon layed upon. All other polygons within the given set would be partitioned by whether they lay within the front of, or behind, the partitioning plane. Polygons existing within both half-spaces were split along the plane and their fragments were inserted in each of their respective half-spaces. The front of the partitioning plane would be dictated by which half-space the viewing camera was located. The sort would be recursed upon the two half spaces until there no longer existed unused pivot polygons. 
+
+The implementation was initially buggy due to my limited understanding of how computer scientists would approach such a problem. In fact, I remember using strings of ones and zeros to feed into a helper function in order to drive the algorithm. It was not an ideal method. I later ran into a sole existing implementation of exactly what I wanted to implement. That implementation which I ended up basing my algorithm off of was much closer to the essence of Lomuto's Partitioning Scheme, which is employed as a common quicksort algorithm. 
+
+As the year turned to 2020, I had a nicely working engine which, in every given frame, could be fed a polygon soup. It would in turn properly sort all of the geometry, splitting any offending polygons, and return an artifact-free image of the scene. I quickly figured that with the clipping and chopping helper functions I wrote which could take any arbitrary plane and chop a scene, I could create interesting effects which involved subtractions against the world geometry.
+
+Some things that I tried making were visual "portals", magnifying lenses, x-ray lenses, and hologram lenses.
+
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="Screenshot 2025-07-10 200155.png"/>
+    </div>
+    <span>
+        <b>A hologram sight I made for the engine demo project.</b>
+    </span>
+</div>
+
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="Screenshot 2025-07-10 200522.png"/>
+    </div>
+    <span>
+        <b>An example of what I would call the "x-ray effect".</b>
+    </span>
+</div>
 
 <div class="bannervw" style="background-image: url('2024-09-09.png');"></div>
-<h1 class="article-title">GAMMA-C</h1>
+<h1 class="article-title">GAMMA: ENGINE OF LIGHT</h1>
 
+I wanted functionality and I wanted user-friendliness. And I felt I achieved them. Now I wanted optimization. So I sought for it.
+
+<div class="bannervw" style="background-image: url('2024-10-05.png');"></div>
+<div class="bannervw" style="background-image: url('etherealplane.png');"></div>
+<div class="bannervw" style="background-image: url('2024-09-09.png');"></div>
+<h1 class="article-title">GAMMA-C</h1>
 
 Current tasks include: Addressing collision issues involving solid models in movement, replacing baked pathtracing with a radiosity algorithm.
 
