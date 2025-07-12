@@ -9,7 +9,7 @@ status = "CURRENT"
 
 A silly little world for silly ppl. You may want to download the html below if connecting to a server that does not use http/https protocol.
 
-<iframe src="world-v10.html" width="1080" height="720">
+<iframe src="world-v10.html" style="height:42vw;width:63vw;">
 </iframe>
 
 <h2>
