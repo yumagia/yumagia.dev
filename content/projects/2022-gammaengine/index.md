@@ -12,6 +12,9 @@ icon = "/projects/2022-gammaengine/2024-10-05.png"
 <div class="bannervw" style="background-image: url('2024-10-05.png');"></div>
 <h1 class="article-title">GAMMA ENGINE</h1>
 
+<iframe src="blockout_radiant.html" style="display:block;height:45vw;width:60vw;margin-left:auto;margin-right:auto;">
+</iframe>
+
 <hr class="type1">
 <div class="textbox">
     <b>An engine inspired by id Tech 2 (Quake), which I programmed entirely from the ground-up. Here are some of the following which I wrote for it:</b>
