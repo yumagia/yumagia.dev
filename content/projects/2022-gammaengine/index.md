@@ -29,8 +29,13 @@ icon = "/projects/2022-gammaengine/2024-10-05.png"
 
 <div class="bannervw" style="background-image: url('Screenshot 2025-07-14 155057.png');"></div>
 
-<iframe src="blockout_radiant.html" style="display:block;height:45vw;width:60vw;margin-left:auto;margin-right:auto;">
+<iframe src="blockout_radiant.html" style="display:block;height:47.5vw;width:60vw;margin-left:auto;margin-right:auto;border:none;">
 </iframe>
+
+<h2>WEB DEMO INSTRUCTIONS:</h2>
+<div class="textbox">
+<b>To run the project, click the green flag. You can move the camera with the mouse. Press ESC to disable pointer lock. You can move the player around the level with WASD controls. Use space to jump. The project is somewhat resource-heavy, so you can stop it by pressing the stop, or alternatively pause, icon on the upper left of the project. There also exists a button to enable fullscreen.</b>
+</div>
 
 I've been working on this one for a while now. It's a 3D game engine inspired by the id Tech 2 (Quake) engine. I built it in the year 2022. Like all my engines from around then, it was built in the Scratch language from the ground-up. It includes a tool which converts lazy meshes in .OBJ format into solid-leaf BSP trees, and another, which subsequently bakes map lighting by pathtracing on the generated BSP trees. Core functions of the engine include various trace functions against the BSP tree, as well as traversal, search, and insertion. It allows for features such as Quake-style player movement, projectiles that bounce, and a mesh of an enemy which occludes properly against the game map. These features are built in their own respective engines: The movement engine, entity updates engine, and the rendering engine.
 
