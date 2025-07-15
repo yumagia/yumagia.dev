@@ -1,5 +1,5 @@
 +++
-title = "GAMMA ENGINE (SCRATCH)" 
+title = "GAMMA ENGINE" 
 description = "Inspired by the id Tech 2 (Quake) engine, built in the Scratch language from the ground-up."
 date = 2024-12-22
 [extra]
@@ -17,6 +17,7 @@ icon = "/projects/2022-gammaengine/2024-10-05.png"
     <b>An engine inspired by id Tech 2 (Quake), which I programmed entirely from the ground-up. Here are some of the following which I wrote for it:</b>
     <li>Tool which converts lazy meshes of .OBJ format into solid-leaf BSP trees</li>
     <li>Another which bakes map lighting by pathtracing on the solid-leaf trees</li>
+    <li>An alternative light baker which uses radiosity-based methods</li>
     <li>Traversal, search, and insertion functions</li>
     <li>Player movement and collision engine</li>
     <li>Various trace and collision functions</li>
@@ -121,7 +122,7 @@ To render the scene, the tree is walked in-order at run-time. This would generat
 <div class="bannervw" style="background-image: url('2024-09-09.png');"></div>
 <h1 class="article-title">GAMMA-C</h1>
 
-Current tasks include: Addressing collision issues involving solid models in movement, replacing baked pathtracing with a radiosity algorithm.
+Current tasks include: Addressing collision issues involving solid models in movement.
 
 Future tasks may include: Finishing the potentially visible set(PVS) generation algorithm and adding its associated functions, rewriting the engine and utilities in C/C++, adding textures.
 
