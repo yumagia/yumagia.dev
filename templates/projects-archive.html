@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr class="title">
+<h1 class="title"><a href="{{ get_url(path='/') }}">YUMAGIA.DEV</a> : <a href="{{ get_url(path='@/projects/_index.md') }}">PROJECTS</a> : ARCHIVE</h1>
+<hr class="title">
+
+<div class="bannervw" style="background-image: url('{{ config.base_url }}/img/autumnmarsh.png');"></div>
+
+All of my archived projects will be displayed here. They'll be hidden from the actual projects page.
+{% endblock content %}
