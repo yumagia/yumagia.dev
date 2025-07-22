@@ -115,9 +115,47 @@ Some things that I tried making were visual "portals", magnifying lenses, x-ray 
 I wanted functionality and I wanted user-friendliness. And I felt I achieved them. I wanted optimization. So I sought for it. 
 I started looking into the use of [binary tree walks to render polygon meshes](https://dl.acm.org/doi/pdf/10.1145/965105.807481/). This was my first real dive into the data structures of computer science. Instead of executing a sort on the scene at every frame like the predecessor engine, GAMMA would take any given polygonal mesh and partition it, sequentially storing pivot polygons in tree nodes and pushing partitioned sets into the children. The children would be recursed on until there are no longer unused polygons. This canonical method of "Autopartitioning" created a binary space partitioning tree or "BSP Tree" for short. The method now known as an implementation of BSP was called such due to the fact that research preceding Fuch's 1980 paper dealt with the idea of depth coherence, which states that a polygon on the far side of the plane cannot, in any way, obstruct a closer polygon. I previously alluded to this idea when describing Beta Engine's rendering technique. The preceding strategy involved strategically positioned planes, which were manually placed by a scene designer. Autopartitioning extended this idea and algorithmically allowed the process to be fully automated. To render the scene, the tree is walked in-order at run-time. This would generate the frames in GAMMA. The traversal would run in a linear, or O(n), time complexity, as opposed to the common painter algorithm's log-linear complexity.
 
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="GG2022Test.png"/>
+        <img src ="GG2022Test2.png"/>
+        <img src ="GG2022Test3.png"/>
+    </div>
+    <span>
+        <b>In November 2022, I had a working rendering system for the engine. Its speed wonderfully exceeded my expectations as my friends and I performed various stress tests on the renderer. I was well convinced that I was working with something of great potential.</b>
+    </span>
+</div>
+
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="Screenshot 2024-08-04 174229.png"/>
+    </div>
+    <span>
+        <b>In the course of a few months, I created a lighting tool which used random light bounces to simulate global illumination. It relied on an octree as an acceleration structure, which was something I would later replace with the BSP tree itself.</b>
+    </span>
+</div>
+
 For a while, I stuck with this BSP implementation. Around the time, I was vaguely aware of BSP's use in Quake and its suceeding lineage of game engines, and that Source and Half-Life engines were built off of Quake and its BSP structure. However, I didn't actually know all too much about Quake's BSP implementation. I was told that autopartitioning was considered a "non-leafy" BSP algorithm. But I didn't understand what a "leafy" BSP implementation was. After reading some older-than-me blogs from the 1990s and early 2000's on the internet, I found my answer.
 
-The autopartitioning algorithm could be modified by pushing the pivot polygons down the tree along its partitions, as opposed to storing them within its nodes. These polygons are flagged as used after being pushed. This process is recursively called until all polygons have been used. At that point, all polygons would be contained within the boundary, or hull, of a leaf. Leaves are by definition convex, and bounded. This would arise to some unique properties, as the entire mesh of polygons would be described as convenient disjoint sets of space. I quickly realized that this leafy structure had immense advantages over its non-leafy counterpart in collisions and intersection queries. This gave it an upper hand in simulating physics, performing ray-traces, determining line-of-sight, and triggering game events. 
+The autopartitioning algorithm could be modified by pushing the pivot polygons down the tree along its partitions, as opposed to storing them within its nodes. These polygons are flagged as used after being pushed. This process is recursively called until all polygons have been used. At that point, all polygons would be contained within the boundary, or hull, of a leaf. Leaves are by definition convex, and bounded. This would arise to some unique properties, as the entire mesh of polygons would be described as convenient disjoint sets of space. I quickly realized that this leafy structure had immense advantages over its non-leafy counterpart in collisions and intersection queries. This gave it an upper hand in simulating physics, raytracing, determining line-of-sight, performing volume-based culling, and triggering game events. 
+
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="Screenshot 2024-04-10 125332.png"/>
+    </div>
+    <span>
+        <b>An early test I did with leaf-storing BSPs. The leaves are visible as distinctly colored groupings of polygons, giving insight to the process of their creation.</b>
+    </span>
+</div>
+
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="2024-04-17.png"/>
+    </div>
+    <span>
+        <b>Polygon-storing leafs, with their finitely bounded hull, could be bounded with a minimal AABB. This essentially creates a bounding volume hierarchy, which is usesul in intersection and collision queries.</b>
+    </span>
+</div>
 
 <div class="bannervw" style="background-image: url('2024-10-05.png');"></div>
 <div class="bannervw" style="background-image: url('etherealplane.png');"></div>
