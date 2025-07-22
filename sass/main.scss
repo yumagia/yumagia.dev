@@ -263,7 +263,10 @@ div.captionedfigure
 
 div.figure
 {
-	display: flex;
+	display: flexbox;
+	max-width: 720px;
+	margin-left: auto;
+	margin-right: auto;
 	justify-content: center;
 	align-items: center;
 }
@@ -272,8 +275,9 @@ div.figure img
 {
 	margin: 0 5px;
 	padding-bottom: 1em;
-	max-width: 512px;
-	max-height: 512px;
+	width: fit-content;
+	max-width: 360px;
+	max-height: 240px;
 }
 
 div.figure2

@@ -59,7 +59,7 @@ It uses a 3D dynamic sound engine I wrote for a previous project to produce dire
 Gamma Engine started as a vision to create a 3D engine suitable for creating fun first person shooter type games on Scratch. It had to have rich functionality like never seen before. Within a few months of on-and-off programming, I had something working. It had a wireframe neon guy who could blast bullets in first person. I also wrote a sound module which allowed for sounds to play directionally for the player. The sound would fall-off at a distance. This was what I now call "Alpha Engine".
 
 <div class="captionedfigure">
-    <div class="figure3">
+    <div class="figure">
         <img src ="Screenshot 2023-12-31 132923.png"/>
         <img src ="Screenshot 2025-02-28 181424.png"/>
         <img src ="Screenshot 2025-02-28 181957.png"/>
@@ -116,7 +116,7 @@ I wanted functionality and I wanted user-friendliness. And I felt I achieved the
 I started looking into the use of [binary tree walks to render polygon meshes](https://dl.acm.org/doi/pdf/10.1145/965105.807481/). This was my first real dive into the data structures of computer science. Instead of executing a sort on the scene at every frame like the predecessor engine, GAMMA would take any given polygonal mesh and partition it, sequentially storing pivot polygons in tree nodes and pushing partitioned sets into the children. The children would be recursed on until there are no longer unused polygons. This canonical method of "Autopartitioning" created a binary space partitioning tree or "BSP Tree" for short. The method now known as an implementation of BSP was called such due to the fact that research preceding Fuch's 1980 paper dealt with the idea of depth coherence, which states that a polygon on the far side of the plane cannot, in any way, obstruct a closer polygon. I previously alluded to this idea when describing Beta Engine's rendering technique. The preceding strategy involved strategically positioned planes, which were manually placed by a scene designer. Autopartitioning extended this idea and algorithmically allowed the process to be fully automated. To render the scene, the tree is walked in-order at run-time. This would generate the frames in GAMMA. The traversal would run in a linear, or O(n), time complexity, as opposed to the common painter algorithm's log-linear complexity.
 
 <div class="captionedfigure">
-    <div class="figure3">
+    <div class="figure">
         <img src ="GG2022Test.png"/>
         <img src ="GG2022Test2.png"/>
         <img src ="GG2022Test3.png"/>
