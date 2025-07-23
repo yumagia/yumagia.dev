@@ -64,7 +64,7 @@ Gamma Engine started as a vision to create a 3D engine suitable for creating fun
         <img src ="Screenshot 2025-02-28 181424.png"/>
         <img src ="Screenshot 2025-02-28 181957.png"/>
     </div>
-    <span>
+    <span class="large">
         <b>During winter break of 2020, my friends and I tested and played the engine in its current state.</b>
     </span>
 </div>
@@ -121,7 +121,7 @@ I started looking into the use of [binary tree walks to render polygon meshes](h
         <img src ="GG2022Test2.png"/>
         <img src ="GG2022Test3.png"/>
     </div>
-    <span>
+    <span class="large">
         <b>In November 2022, I had a working rendering system for the engine. Its speed wonderfully exceeded my expectations as my friends and I performed various stress tests on the renderer. I was well convinced that I was working with something of great potential.</b>
     </span>
 </div>
