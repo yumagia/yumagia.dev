@@ -30,7 +30,7 @@ icon = "/projects/2022-gammaengine/2024-10-05.png"
 
 <div class="bannervw" style="background-image: url('Screenshot 2025-07-14 155057.png');"></div>
 
-<iframe src="blockout_radiant.html" style="display:block;height:47.5vw;width:60vw;margin-left:auto;margin-right:auto;border:none;">
+<iframe src="blockout_radiant.html" style="display:block;height:40vw;width:50vw;margin-left:auto;margin-right:auto;border:none;">
 </iframe>
 
 <h2>WEB DEMO INSTRUCTIONS:</h2>
