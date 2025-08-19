@@ -175,9 +175,9 @@ The speed boost was satisfying, but I was still wary of the idea that I'd still 
 <div class="bannervw" style="background-image: url('2024-09-09.png');"></div>
 <h1 class="article-title">GAMMA-C</h1>
 
-This engine, and its BSP utilities were programmed entirely in Scratch. Software architecture is daunting in such an environment, and many issues were left unfixed to stack upon each other. Luckily, Scratch is not the only language to exist. At the time of writing this, I am putting together BSP utilities in C/C++, to create compiled binaries, just like how Quake did it. Additionally, I can implement potentially visible set(PVS) generation, and textures. 
+This engine, and its BSP utilities were programmed entirely in Scratch. Software architecture is daunting in such an environment, and many issues were left unfixed to stack upon each other. Luckily, Scratch is not the only language to exist. At the time of writing this, I am putting together BSP utilities in C/C++, to create compiled binaries, just like how Quake did it. Additionally, I can implement potentially visible set(PVS) generation with visibility portals, and textures. 
 
-Midway into making GAMMA, I read large amounts about Quake through Michael Abrash's Graphics Programming Black Book, and through the actual source code of Quake and Quake II. I learned how to use TrenchBroom to create .bsp to .obj file meshes for my own engine. Finally, I played through not only some of the classic Quake games, but also Half-Life 2.
+Midway into making GAMMA, I read large amounts about Quake through Michael Abrash's Graphics Programming Black Book, as well as through the actual source code of Quake and Quake II. I learned how to use TrenchBroom to create .bsp to .obj file meshes for my own engine. Finally, I played through not only some of the classic Quake games, but also Half-Life 2.
 
 I may end up reinventing the wheel still, as I pretty much have been doing all along. After all, id Software seems to already have it all figured out. However, I don't see how following in the footsteps of these game developers of a long-ago era is going to be particularly unworthwhile. It's a huge pain to create a BSP-based game engine, but this is an undeniable way to work in some intimate knowledge, the absolute foundational grasp, on the essentials of computer science.
 
