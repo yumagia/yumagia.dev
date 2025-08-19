@@ -1,6 +1,6 @@
 +++
 title = "GAMMA ENGINE" 
-description = "Inspired by the id Tech 2 (Quake) engine, built in the Scratch language from the ground-up."
+description = "A 3D game engine inspired by the id Tech 2 (Quake) engine, built in the Scratch language from the ground-up."
 date = 2024-12-22
 [extra]
 start_date = "31 OCT 2022"
@@ -14,7 +14,7 @@ icon = "/projects/2022-gammaengine/2024-10-05.png"
 
 <hr class="type1">
 <div class="textbox">
-    <b>An engine inspired by id Tech 2 (Quake), which I programmed entirely from the ground-up. Here are some of the following which I wrote for it:</b>
+    <b>A 3D game engine inspired by id Tech 2 (Quake), which I programmed entirely from the ground-up. Here are some of the following which I wrote for it:</b>
     <li>Tool which converts lazy meshes of .OBJ format into solid-leaf BSP trees</li>
     <li>Another which bakes map lighting by pathtracing on the solid-leaf trees</li>
     <li>An alternative light baker which uses radiosity-based methods</li>
