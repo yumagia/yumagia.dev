@@ -36,3 +36,4 @@ Here is a zip for the project source, as well as an executable of the program:
 <b><a href="square.zip">PROGRAM EXECUTABLE (Stored in a zip)</a></b>
 </div>
 
+{{ gallery() }}
