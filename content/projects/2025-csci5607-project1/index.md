@@ -1,12 +1,12 @@
 +++
 title = "CSCI 5607 PROJECT 1" 
-description = "A 3D game engine inspired by the id Tech 2 (Quake) engine, built in the Scratch language from the ground-up."
+description = "The first project from the Computer Graphics class I'm taking."
 date = 2025-09-26
 [extra]
 start_date = "23 SEP 2025"
 end_date = "26 SEP 2025"
 status = "COMPLETE"
-icon = "Screenshot 2025-09-26 194459.png"
+icon = "/projects/2025-csci5607-project1/Screenshot 2025-09-26 194459.png"
 +++
 
 <div class="bannervw" style="background-image: url('Screenshot 2025-09-26 194459.png');"></div>
