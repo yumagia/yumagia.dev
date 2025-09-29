@@ -34,10 +34,9 @@ To move the square, click on its body, and drag it. Clicking and dragging on the
 
 Implementing the transformations was relatively straightforward. We were previously assigned to implement many basic PGA multivector operations, which built up to the bulk of this project. Despite having all the basic operations for 2D geometric primitives, and also stuff like point-in-triangle collision, there were some interesting edge cases which I ran into while coding the transformations. One such case was the angle function used for rotation. The square would rotate properly in one direction, but in the opposing direction, a positive angle would be applied. This caused an inverted rotation across half of a full rotation. The solution was to simply draw a line from the clicked position and square's center, and find the signed distance from the dragged position to this line. The sign would be multiplied to the angle to produce a correct rotation. The rotation step caused an additional issue with zero-angles. Because the angle function was simply a line multiplied with another, the arc cosine would be not-a-number. I fixed this by simply evaluating for nan. 
 
-Here is a zip for the project source, as well as an executable of the program:
-
 The given texture is a grass block (side view) from Minecraft.
 
+Here is a zip for the project source, as well as an executable of the program:
 <div class="textbox">
 <b><a href="CSCI-5607-Project-1-main.zip">SOURCE ZIP</a></b>
 
