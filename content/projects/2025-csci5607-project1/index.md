@@ -1,6 +1,6 @@
 +++
 title = "CSCI 5607 PROJECT 1" 
-description = "The first project from the Computer Graphics class I'm taking."
+description = "The first project from the Computer Graphics class I'm taking. Written in C++."
 date = 2025-09-26
 [extra]
 start_date = "23 SEP 2025"
