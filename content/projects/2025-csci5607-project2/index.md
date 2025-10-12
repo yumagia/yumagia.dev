@@ -6,10 +6,10 @@ date = 2025-10-12
 start_date = "6 OCT 2025"
 end_date = "12 OCT 2025"
 status = "COMPLETE"
-icon = "/projects/2025-csci5607-project1/Screenshot 2025-09-26 194459.png"
+icon = "/projects/2025-csci5607-project2/Screenshot 2025-10-12 183201.png"
 +++
 
-<div class="bannervw" style="background-image: url('Screenshot 2025-09-26 194459.png');"></div>
+<div class="bannervw" style="background-image: url('Screenshot 2025-10-12 183201.png');"></div>
 
 <h1 class="article-title">CSCI 5607 PROJECT 2</h1>
 
