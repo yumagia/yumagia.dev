@@ -1,7 +1,7 @@
 +++
 title = "GAMMAC" 
 description = "A Quake-style 3D engine, meant to be the successor of my original 3D BSP engine, coded in C/C++."
-date = 2025-09-30
+date = 2025-10-16
 [extra]
 start_date = "1 Jan 2025"
 end_date = "CURRENT"
