@@ -197,3 +197,5 @@ Here's a nice blooper from when I had erroneous refraction:
         <b>Some negation somewhere caused the refraction to reflect quite oddly</b>
     </span>
 </div>
+
+{{ gallery() }}
