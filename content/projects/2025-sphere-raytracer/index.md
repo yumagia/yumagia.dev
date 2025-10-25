@@ -31,6 +31,25 @@ Here are some of its features:
     <li>Fresnel refraction and reflection</li>
 </div>
 
+<h2>INSTRUCTIONS:</h2>
+<div class="textbox">
+<b>The project is made to compile on linux, and the provided executable is for linux. 
+
+Just run make to compile the project:
+
+<code>make</code>
+
+It's as simple as that!
+
+To raytrace a scene file, type in the following command:
+<code>./Raytracer scenefile</code>
+Where "scenefile" is the path to the given file.
+
+<b><a href="sphere-raytracer.zip">SOURCE ZIP</a></b>
+
+<b><a href="raytracer-executable.zip">PROGRAM EXECUTABLE (Stored in a zip)</a></b>
+</b>
+
 Here is an example file:
 <div class="textbox">
 #Simple sphere: Scene
