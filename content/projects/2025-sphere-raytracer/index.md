@@ -158,7 +158,7 @@ Additionally, the random sampling makes it slow. However, it's very effective ag
     </span>
 </div>
 
-<div class="bannervw" style="background-image: url('multilit-sphere.png');"></div>
+<div class="bannervw" style="background-image: url('spheres2-blooper.png');"></div>
 
 <h1 class="article-title">ADVANCED LIGHTING</h1>
 
