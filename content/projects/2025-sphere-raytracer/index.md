@@ -15,6 +15,22 @@ icon = "/projects/2025-sphere-raytracer/spheres2.png"
 
 This was a sphere raytracer I wrote in C++. It parses a scene file, which describes primitives in 3D space, as well as attributes for the raytracer, and outputs a raytraced image in various image formats (including BMP and PNG).
 
+Here are some of its features:
+<hr class="type1">
+<div class="textbox">
+    <li>Camera settings (position, direction, image resolution, aspect ratio)</li>
+    <li>Background color setting</li>
+    <li>BMP, PNG, JPEG(JPG), and TGA formats</li>
+    <li>Sphere primitives</li>
+    <li>Ambient light setting</li>
+    <li>Point and directional lighting</li>
+    <li>Shadowing</li>
+    <li>Light instancing</li>
+    <li>Sampling</li>
+    <li>Phong specularity</li>
+    <li>Fresnel refraction and reflection</li>
+</div>
+
 Here is an example file:
 <div class="textbox">
 #Simple sphere: Scene
@@ -142,7 +158,7 @@ Additionally, the random sampling makes it slow. However, it's very effective ag
     </span>
 </div>
 
-<div class="bannervw" style="background-image: url('cows.png');"></div>
+<div class="bannervw" style="background-image: url('multilit-sphere.png');"></div>
 
 <h1 class="article-title">ADVANCED LIGHTING</h1>
 
@@ -157,3 +173,27 @@ We can really see the properties of refraction if we examine these three similar
     </span>
 </div>
 
+You can also instance many lights. Here is a multiply-lit scene with directional lighting.
+
+
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="multilit-sphere.png"/>
+    </div>
+    <span>
+        <b>A multiply lit sphere</b>
+    </span>
+</div>
+
+When I wrote this raytracer, the fresnel was rather difficult to impleent. I found that I messed up some signs with the vector formulae along the way, which weren't immediately revealed with testing. I also had trouble finding succint information on the implementation of fresnel and snell's law. It was very helpful for me to reference similar renders and to somewhat think, in detail, about the physical phenomena of glass spheres. 
+
+Here's a nice blooper from when I had erroneous refraction:
+
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="spheres2-blooper.png"/>
+    </div>
+    <span>
+        <b>Some negation somewhere caused the refraction to reflect quite oddly</b>
+    </span>
+</div>
