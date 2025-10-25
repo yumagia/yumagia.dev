@@ -49,6 +49,7 @@ Where "scenefile" is the path to the given file.
 
 <b><a href="raytracer-executable.zip">PROGRAM EXECUTABLE (Stored in a zip)</a></b>
 </b>
+</div>
 
 Here is an example file:
 <div class="textbox">
