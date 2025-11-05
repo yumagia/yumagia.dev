@@ -1,19 +1,19 @@
 +++
 title = "RAYTRACER+" 
 description = "A raytracer writen in C++."
-date = 2025-11-01
+date = 2025-11-04
 [extra]
 start_date = "31 OCT 2025"
-end_date = "1 NOV 2025"
+end_date = "4 NOV 2025"
 status = "COMPLETE"
-icon = "/projects/2025-sphere-raytracer/spheres2.png"
+icon = "/projects/2025-raytracer-plus/plant.png"
 +++
 
-<div class="bannervw" style="background-image: url('spheres2.png');"></div>
+<div class="bannervw" style="background-image: url('dragon.png');"></div>
 
 <h1 class="article-title">RAYTRACER+</h1>
 
-I previously made a sphere raytracer that featured things like dielectrics(reflection and refraction), shadows, and phong shading. The next part of the project builds off of this by adding triangles, vertex normals, and acceleration structures.
+I previously made [a sphere raytracer](https://yumagia.dev/projects/2025-sphere-raytracer/) that featured things like dielectrics(reflection and refraction), shadows, and phong shading. The next part of the project builds off of this by adding triangles, vertex normals, and acceleration structures.
 
 <div class="captionedfigure">
     <div class="figure3">
@@ -24,7 +24,44 @@ I previously made a sphere raytracer that featured things like dielectrics(refle
     </span>
 </div>
 
+Here are some of its features:
+<hr class="type1">
+<div class="textbox">
+    <li>User-specified camera placement, film resolution, and aspect ratio</li>
+    <li>User-specified scenes with spheres, triangles, triangles with vertex normals, and background colors</li>
+    <li>Arbitrary materials which define diffuse, specular, reflections, and refractions</li>
+    <li>Point and directional lights</li>
+    <li>Ambient light</li>
+    <li>Recursion to a bounded depth</li>
+    <li>Jittered supersampling</li>
+    <li>A BVH implementation</li>
+    <li>Parallelization</li>
+</div>
 
+<h2>INSTRUCTIONS:</h2>
+<div class="textbox">
+<b>The project is made to compile on linux, and the provided executable is for linux. 
+
+Just run make to compile the project:
+
+<code>make</code>
+
+It's as simple as that!
+
+To raytrace a scene file, type in the following command:
+<code>./Raytracer scenefile</code>
+Where "scenefile" is the path to the given file.
+
+You can additionally utilize the BVH by adding the "-accelerate" argument.
+
+<code>./Raytracer scenefile -accelerate</code>
+
+<b><a href="sphere-raytracer.zip">SOURCE ZIP</a></b>
+
+<b><a href="raytracer-executable.zip">PROGRAM EXECUTABLE (Stored in a zip)</a></b>
+
+</b>
+</div>
 
 <div class="bannervw" style="background-image: url('planefail.png');"></div>
 
@@ -118,10 +155,91 @@ After changing a few epsilons, I made a breakthrough! The dragon was rendering p
     </span>
 </div>
 
-<div class="bannervw" style="background-image: url('planefail.png');"></div>
+<div class="captionedfigure">
+    <div class="figure">
+        <img src ="triangle.png"/>
+        <img src ="outdoor.png"/>
+        <img src ="foo.png"/>
+    </div>
+    <span>
+        <b>The three basic triangle example scenes which now worked.</b>
+    </span>
+</div>
+
+<div class="captionedfigure">
+    <div class="figure">
+        <img src ="arm.png"/>
+        <img src ="outdoor.png"/>
+        <img src ="foo.png"/>
+    </div>
+    <span>
+        <b>The scenes with triangle normals</b>
+    </span>
+</div>
+
+<div class="bannervw" style="background-image: url('plant.png');"></div>
 
 <h1 class="article-title">OPTIMIZATION</h1>
 
+Previously, the BVH and multithreading were not giving me any performance gains. However, after fixing the aforementioned issues in my code, They were really doing their jobs to reduce render times.
+
+<div class="captionedfigure">
+    <span>
+        <b>FOO (Two triangles)</b>
+    </span>
+    <div class="figure3">
+        <img src ="foo.png"/>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <th> </th>
+        <th>No BVH</th>
+        <th>BVH</th>
+    </tr>
+    <tr>
+        <th>No Multithreading</th>
+        <th>~0.9s</th>
+        <th>~0.7s</th>
+    </tr>
+        <tr>
+        <th>12 threads</th>
+        <th>~0.2s</th>
+        <th>~0.2s</th>
+    </tr>
+</table>
+
+The two-triangle test scene runs nicely below one second regardless of optimization. It did seem to somehow run faster with BVH but that should really not be the case as there's nothing to accelerate (The BVH cannot further partition a axial face with two triangles). So I'll just chalk that up to variation. It speeds up nicely by around 4-5 times with multithreading.
+
+<div class="captionedfigure">
+    <span>
+        <b>FOO (Many tesselations)</b>
+    </span>
+    <div class="figure3">
+        <img src ="foo.png"/>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <th> </th>
+        <th>No BVH</th>
+        <th>BVH</th>
+    </tr>
+    <tr>
+        <th>No Multithreading</th>
+        <th>~680s</th>
+        <th>~230s</th>
+    </tr>
+        <tr>
+        <th>12 threads</th>
+        <th>~390s</th>
+        <th>~155s</th>
+    </tr>
+</table>
+
+In the tesellated test scene, there is a clear benefit to the BVH, as it offers many early-outs while testing a tree of triangles. Multithreading helps cut the base time by about half, but the BVH reduced it to a third. With both of those optimizations, the scene ran at 155 seconds, an enourmous improvement from no optimizations, which took 700 seconds.
 
 <div class="captionedfigure">
     <span>
@@ -146,11 +264,13 @@ After changing a few epsilons, I made a breakthrough! The dragon was rendering p
         <tr>
         <th>12 threads</th>
         <th>~500s</th>
-        <th>~300s*</th>
+        <th>~300s</th>
     </tr>
 </table>
 
+The dragon scene ran longer than 17 minutes without multithreading or the BVH. It sped up to around 500 seconds with multithreading, and I was excited to see some further performance gains with the BVH. However, when I actually looked at the image, the dragon was cut in half. This was saddening, and I didn't really know what happened to the other half.
 
+(I was able to later fix this bug, and the speed remained the same)
 
 <div class="captionedfigure">
     <span>
@@ -174,10 +294,20 @@ After changing a few epsilons, I made a breakthrough! The dragon was rendering p
     </tr>
         <tr>
         <th>12 threads</th>
-        <th></th>
+        <th>~720s</th>
         <th>~520s</th>
     </tr>
 </table>
+
+This scene is hefty. Standing at 5k+ triangles, it was slower than my 17 minute timer. Multithreading boosted it to under 1k seconds but not by a massive margin. Even with BVH and 12 threads, I wasn't able to beat 400 seconds. 
+
+<div class="bannervw" style="background-image: url('armnormals.png');"></div>
+
+<h1 class="article-title">FURTHERMORE</h1>
+
+The whole process of writing triangle support for this raytracer was bug-laden. I immediately got bugs as soon as I could put a triangle on-screen. And I couldn't meaningfully debug them before I wanted to implement the next feature. I was so excited to have a BSP implementation so I could even raytrace quake-like gamemaps, or at least that was my vision. Realistically, I wrote a working BSP algorithm but did not have enough time to integrate it into the project. I wasn't even able to get rid of the last BVH bugs which still cause some of the scenes to not render properly. The amount of time I had to spend rendering and debugging was somewhat frustrating. I really wanted to have my features just work! The slow render times didn't help either. I wished I could make the code cleaner too.
+
+So perhaps I'll revisit this project some day else.
 
 <img src ="/img/halloween.png" width = "360"/>
 
