@@ -414,3 +414,11 @@ div.blog-ring {
 	display: flex;
 }
 
+table, td, th {
+  border: 1px solid;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+}
