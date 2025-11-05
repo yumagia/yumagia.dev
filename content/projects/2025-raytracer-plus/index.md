@@ -56,7 +56,7 @@ You can additionally utilize the BVH by adding the "-accelerate" argument.
 
 <code>./Raytracer scenefile -accelerate</code>
 
-<b><a href="sphere-raytracer.zip">SOURCE ZIP</a></b>
+<b><a href="full-raytracer.zip">SOURCE ZIP</a></b>
 
 <b><a href="raytracer-executable.zip">PROGRAM EXECUTABLE (Stored in a zip)</a></b>
 
@@ -169,8 +169,9 @@ After changing a few epsilons, I made a breakthrough! The dragon was rendering p
 <div class="captionedfigure">
     <div class="figure">
         <img src ="arm.png"/>
-        <img src ="outdoor.png"/>
-        <img src ="foo.png"/>
+        <img src ="hand.png"/>
+        <img src ="noLabel.png"/>
+        <img src ="gear.png"/>
     </div>
     <span>
         <b>The scenes with triangle normals</b>
@@ -301,7 +302,7 @@ The dragon scene ran longer than 17 minutes without multithreading or the BVH. I
 
 This scene is hefty. Standing at 5k+ triangles, it was slower than my 17 minute timer. Multithreading boosted it to under 1k seconds but not by a massive margin. Even with BVH and 12 threads, I wasn't able to beat 400 seconds. 
 
-<div class="bannervw" style="background-image: url('armnormals.png');"></div>
+<div class="bannervw" style="background-image: url('gear.png');"></div>
 
 <h1 class="article-title">FURTHERMORE</h1>
 
