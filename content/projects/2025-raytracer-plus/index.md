@@ -9,7 +9,7 @@ status = "COMPLETE"
 icon = "/projects/2025-raytracer-plus/plant.png"
 +++
 
-<div class="bannervw" style="background-image: url('dragon.png');"></div>
+<div class="bannervw" style="background-image: url('gear.png');"></div>
 
 <h1 class="article-title">RAYTRACER+</h1>
 
@@ -63,7 +63,7 @@ You can additionally utilize the BVH by adding the "-accelerate" argument.
 </b>
 </div>
 
-<div class="bannervw" style="background-image: url('planefail.png');"></div>
+<div class="bannervw" style="background-image: url('foo2.png');"></div>
 
 <h1 class="article-title">THE BVH</h1>
 
