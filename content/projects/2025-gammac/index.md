@@ -14,9 +14,8 @@ status = "IN PROGRESS"
 <div class="textbox">
     <b>A Quake-style 3D game engine, of which I am writing the following for:</b>
     <li>Custom BSP utilities ("BSP", "VIS", and "RAD")</li>
-    <li>Quake BSP file reader</li>
-    <li>Vulkan-based renderer</li>
-    <li>BSP binary to Scratch-readable ascii converter</li>
+    <li>OpenGL renderer</li>
+    <li>ASCII bsp file</li>
 </div>
 
 <h1 class="article-title">Wait (Where are we Now?)</h1>
@@ -41,4 +40,21 @@ I started working on GammaC, the C++ sucessor to [Gamma Engine](https://yumagia.
 
 Reading into Quake's binary space partitioning tool and .bsp format, there were some design choices which were initially somewhat unclear to me. I noticed that Quake's polygons "resided" on both internal nodes, and leavess. I always assumed that they'd be purely within the leaves, like how a solid-leaf tree would supposed to. Searching on the web did not help much further, either. Some sources briefly noted that the node faces were used for collision, and the leaf faces were used in rendering. It wasn't actually until I asked ericw, who made [ericw-tools for Quake](https://ericwa.github.io/ericw-tools/), as to what was going on. Apparently, the process of making a leafy tree produces far more splits than making a node-storing tree. I realized this early into my development of the original Gamma Engine. QBSP happens to push its faces onto both nodes and leaves, and will leave some faces unsplit to be referenced by up to two leaves. This greatly reduces splits by allowing leafs to share polygons instead of splitting them. The partitioning works much like a node-storing BSP algorithm. It just happens that leaves are produced too. Knowing this, I immediately implemented the hybrid method to GammaC, and it nicely worked out to reduce the number of splits that my original engine would produce.
 
-(To be continued!)
+<h1 class="article-title">THE VISION OF LIGHT</h1>
+
+I've called the level creation tools "GRAK", short for "Gamma's RAD Army Knife". It's a play on the name of the "QuArK" mapping program for Quake. In essence, it takes a manifold lazy mesh, and produces a BSP tree of it, stored in a single file. At the time of writing this, I've been able to generate files from a barebones format. For the kicks, I imported a file into scratch and rendered it. 
+
+<div class="captionedfigure">
+    <div class="figure3">
+        <img src ="firsttestrender.png"/>
+    </div>
+    <span>
+        <b>A test render of "blockout1" on Scratch. It contains ~1-2k triangles total. Only a few hundred are actually drawn in this scene.</b>
+    </span>
+</div>
+
+I plan to add radiosity-based lighting, and possibly also PVS culling. Additionally, I had an idea to quantize lighting data using nearest-neighbor methods in order to variably compress Gamma's lightmaps. On the engine-side of things, I plan to add entities and 3D collisions, as well as gameplay logic.
+
+To get these done within less than two weeks of time is somewhat daunting. I still have much of the OpenGL renderer to finish, and I'm still uncertain if I can finish the PVS in this timeframe. Regardless, I've made consistent progress and things are going smoothly at the moment. Memory issues present as a difficulty, and I'm working to fix memory leaks and using the C++ memory library in order to safely work with memory. Another concern is the time I might need to script the entities for gameplay. It's rather simple but I've consistently found that gameplay mechanics take longer to implement than I expect. 
+
+{{ gallery() }}
