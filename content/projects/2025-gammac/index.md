@@ -57,4 +57,48 @@ I plan to add radiosity-based lighting, and possibly also PVS culling. Additiona
 
 To get these done within less than two weeks of time is somewhat daunting. I still have much of the OpenGL renderer to finish, and I'm still uncertain if I can finish the PVS in this timeframe. Regardless, I've made consistent progress and things are going smoothly at the moment. Memory issues present as a difficulty, and I'm working to fix memory leaks and using the C++ memory library in order to safely work with memory. Another concern is the time I might need to script the entities for gameplay. It's rather simple but I've consistently found that gameplay mechanics take longer to implement than I expect. 
 
+<h1 class="article-title">PROGRESS QUEUE</h1>
+
+<div style="text-align: center; padding-top: 2rem; padding-bottom: 0.5rem;">
+<b>COMPLETION TIMELINE:</b>
+</div>
+
+<table>
+    <tr>
+        <th>Get a working BSP File</th>
+        <th>27 Nov 2025</th>
+    </tr>
+    <tr>
+        <th>Make a Scratch renderer for the BSP file</th>
+        <th>27 Nov 2025</th>
+    </tr>
+</table>
+
+<div style="text-align: center; padding-top: 2rem; padding-bottom: 0.5rem;">
+    <b>PLANNED ADDITIONS AND TARGET DATES:</b>
+</div>
+
+<table>
+    <tr>
+        <th>Implement radiosity-based lighting</th>
+        <th>6 DEC 2025</th>
+    </tr>
+    <tr>
+        <th>Implement lightmap compression</th>
+        <th>6 DEC 2025</th>
+    </tr>
+    <tr>
+        <th>Implement a raw map format</th>
+        <th>6 DEC 2025</th>
+    </tr>
+    <tr>
+        <th>Implement triangle-strip meshes</th>
+        <th>6 DEC 2025</th>
+    </tr>
+    <tr>
+        <th>Complete a working renderer</th>
+        <th>9 DEC 2025</th>
+    </tr>
+</table>
+
 {{ gallery() }}
