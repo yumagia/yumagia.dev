@@ -86,4 +86,6 @@ I really really want to develop this project further on my own time, in order to
 <h1 class="article-title">LIBRARIES USED</h1>
 I used Blender and TrenchBroom for 3D modeling. I also used Scratch/JavaScript + WebGL for software rendering. For the C++ renderer, I used OpenGL with SDL.
 
+[Source code repository link](https://github.com/yumagia/GammaC)
+
 {{ gallery() }}
